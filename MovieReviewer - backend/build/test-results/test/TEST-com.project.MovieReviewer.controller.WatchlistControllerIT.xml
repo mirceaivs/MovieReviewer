@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.project.MovieReviewer.controller.WatchlistControllerIT" tests="3" skipped="0" failures="3" errors="0" timestamp="2025-05-25T20:00:18.081Z" hostname="Mircea" time="0.328">
+  <properties/>
+  <testcase name="addDuplicateToWatchlist_ShouldFail()" classname="com.project.MovieReviewer.controller.WatchlistControllerIT" time="0.111">
+    <failure message="jakarta.validation.ConstraintViolationException: Validation failed for classes [com.project.MovieReviewer.model.Movie] during persist time for groups [jakarta.validation.groups.Default, ]&#10;List of constraint violations:[&#10;&#9;ConstraintViolationImpl{interpolatedMessage='Type must not be blank!', propertyPath=type, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Type must not be blank!'}&#10;&#9;ConstraintViolationImpl{interpolatedMessage='Language must not be blank!', propertyPath=language, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Language must not be blank!'}&#10;&#9;ConstraintViolationImpl{interpolatedMessage='Writer must not be blank!', propertyPath=writer, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Writer must not be blank!'}&#10;&#9;ConstraintViolationImpl{interpolatedMessage='Poster URL must not be blank!', propertyPath=poster, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Poster URL must not be blank!'}&#10;&#9;ConstraintViolationImpl{interpolatedMessage='Rated must not be blank!', propertyPath=rated, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Rated must not be blank!'}&#10;&#9;ConstraintViolationImpl{interpolatedMessage='Country must not be blank!', propertyPath=country, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Country must not be blank!'}&#10;&#9;ConstraintViolationImpl{interpolatedMessage='Response must not be blank!', propertyPath=response, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Response must not be blank!'}&#10;&#9;ConstraintViolationImpl{interpolatedMessage='Awards must not be blank!', propertyPath=awards, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Awards must not be blank!'}&#10;&#9;ConstraintViolationImpl{interpolatedMessage='Director must not be blank!', propertyPath=director, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Director must not be blank!'}&#10;&#9;ConstraintViolationImpl{interpolatedMessage='Plot must not be blank!', propertyPath=plot, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Plot must not be blank!'}&#10;&#9;ConstraintViolationImpl{interpolatedMessage='Year must not be blank!', propertyPath=year, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Year must not be blank!'}&#10;&#9;ConstraintViolationImpl{interpolatedMessage='Runtime must not be blank!', propertyPath=runtime, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Runtime must not be blank!'}&#10;&#9;ConstraintViolationImpl{interpolatedMessage='Released date must not be blank!', propertyPath=released, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Released date must not be blank!'}&#10;]" type="jakarta.validation.ConstraintViolationException">jakarta.validation.ConstraintViolationException: Validation failed for classes [com.project.MovieReviewer.model.Movie] during persist time for groups [jakarta.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='Type must not be blank!', propertyPath=type, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Type must not be blank!'}
+	ConstraintViolationImpl{interpolatedMessage='Language must not be blank!', propertyPath=language, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Language must not be blank!'}
+	ConstraintViolationImpl{interpolatedMessage='Writer must not be blank!', propertyPath=writer, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Writer must not be blank!'}
+	ConstraintViolationImpl{interpolatedMessage='Poster URL must not be blank!', propertyPath=poster, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Poster URL must not be blank!'}
+	ConstraintViolationImpl{interpolatedMessage='Rated must not be blank!', propertyPath=rated, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Rated must not be blank!'}
+	ConstraintViolationImpl{interpolatedMessage='Country must not be blank!', propertyPath=country, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Country must not be blank!'}
+	ConstraintViolationImpl{interpolatedMessage='Response must not be blank!', propertyPath=response, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Response must not be blank!'}
+	ConstraintViolationImpl{interpolatedMessage='Awards must not be blank!', propertyPath=awards, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Awards must not be blank!'}
+	ConstraintViolationImpl{interpolatedMessage='Director must not be blank!', propertyPath=director, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Director must not be blank!'}
+	ConstraintViolationImpl{interpolatedMessage='Plot must not be blank!', propertyPath=plot, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Plot must not be blank!'}
+	ConstraintViolationImpl{interpolatedMessage='Year must not be blank!', propertyPath=year, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Year must not be blank!'}
+	ConstraintViolationImpl{interpolatedMessage='Runtime must not be blank!', propertyPath=runtime, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Runtime must not be blank!'}
+	ConstraintViolationImpl{interpolatedMessage='Released date must not be blank!', propertyPath=released, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Released date must not be blank!'}
+]
+	at app//org.hibernate.boot.beanvalidation.BeanValidationEventListener.validate(BeanValidationEventListener.java:176)
+	at app//org.hibernate.boot.beanvalidation.BeanValidationEventListener.onPreInsert(BeanValidationEventListener.java:88)
+	at app//org.hibernate.action.internal.EntityIdentityInsertAction.preInsert(EntityIdentityInsertAction.java:201)
+	at app//org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:79)
+	at app//org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:682)
+	at app//org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:293)
+	at app//org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:274)
+	at app//org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:324)
+	at app//org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:393)
+	at app//org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:307)
+	at app//org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:223)
+	at app//org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:136)
+	at app//org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:177)
+	at app//org.hibernate.event.internal.DefaultPersistEventListener.persist(DefaultPersistEventListener.java:95)
+	at app//org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:79)
+	at app//org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:55)
+	at app//org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127)
+	at app//org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:761)
+	at app//org.hibernate.internal.SessionImpl.persist(SessionImpl.java:745)
+	at jdk.internal.reflect.GeneratedMethodAccessor83.invoke(Unknown Source)
+	at java.base@17.0.15/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.15/java.lang.reflect.Method.invoke(Method.java:569)
+	at app//org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:320)
+	at app/jdk.proxy3/jdk.proxy3.$Proxy159.persist(Unknown Source)
+	at app//org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:636)
+	at jdk.internal.reflect.GeneratedMethodAccessor84.invoke(Unknown Source)
+	at java.base@17.0.15/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.15/java.lang.reflect.Method.invoke(Method.java:569)
+	at app//org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at app//org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:277)
+	at app//org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170)
+	at app//org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
+	at app//org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:515)
+	at app//org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:284)
+	at app//org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:731)
+	at app//org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at app//org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:174)
+	at app//org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:149)
+	at app//org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at app//org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:69)
+	at app//org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at app//org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at app//org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at app//org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at app//org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
+	at app//org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at app//org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:165)
+	at app//org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at app//org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at app/jdk.proxy3/jdk.proxy3.$Proxy174.save(Unknown Source)
+	at app//com.project.MovieReviewer.controller.WatchlistControllerIT.setup(WatchlistControllerIT.java:58)
+	at java.base@17.0.15/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.15/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base@17.0.15/java.util.ArrayList.forEach(ArrayList.java:1511)
+</failure>
+  </testcase>
+  <testcase name="addAndRemoveFromWatchlist_Flow()" classname="com.project.MovieReviewer.controller.WatchlistControllerIT" time="0.107">
+    <failure message="jakarta.validation.ConstraintViolationException: Validation failed for classes [com.project.MovieReviewer.model.Movie] during persist time for groups [jakarta.validation.groups.Default, ]&#10;List of constraint violations:[&#10;&#9;ConstraintViolationImpl{interpolatedMessage='Plot must not be blank!', propertyPath=plot, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Plot must not be blank!'}&#10;&#9;ConstraintViolationImpl{interpolatedMessage='Released date must not be blank!', propertyPath=released, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Released date must not be blank!'}&#10;&#9;ConstraintViolationImpl{interpolatedMessage='Director must not be blank!', propertyPath=director, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Director must not be blank!'}&#10;&#9;ConstraintViolationImpl{interpolatedMessage='Runtime must not be blank!', propertyPath=runtime, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Runtime must not be blank!'}&#10;&#9;ConstraintViolationImpl{interpolatedMessage='Year must not be blank!', propertyPath=year, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Year must not be blank!'}&#10;&#9;ConstraintViolationImpl{interpolatedMessage='Language must not be blank!', propertyPath=language, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Language must not be blank!'}&#10;&#9;ConstraintViolationImpl{interpolatedMessage='Awards must not be blank!', propertyPath=awards, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Awards must not be blank!'}&#10;&#9;ConstraintViolationImpl{interpolatedMessage='Type must not be blank!', propertyPath=type, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Type must not be blank!'}&#10;&#9;ConstraintViolationImpl{interpolatedMessage='Poster URL must not be blank!', propertyPath=poster, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Poster URL must not be blank!'}&#10;&#9;ConstraintViolationImpl{interpolatedMessage='Writer must not be blank!', propertyPath=writer, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Writer must not be blank!'}&#10;&#9;ConstraintViolationImpl{interpolatedMessage='Rated must not be blank!', propertyPath=rated, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Rated must not be blank!'}&#10;&#9;ConstraintViolationImpl{interpolatedMessage='Country must not be blank!', propertyPath=country, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Country must not be blank!'}&#10;&#9;ConstraintViolationImpl{interpolatedMessage='Response must not be blank!', propertyPath=response, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Response must not be blank!'}&#10;]" type="jakarta.validation.ConstraintViolationException">jakarta.validation.ConstraintViolationException: Validation failed for classes [com.project.MovieReviewer.model.Movie] during persist time for groups [jakarta.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='Plot must not be blank!', propertyPath=plot, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Plot must not be blank!'}
+	ConstraintViolationImpl{interpolatedMessage='Released date must not be blank!', propertyPath=released, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Released date must not be blank!'}
+	ConstraintViolationImpl{interpolatedMessage='Director must not be blank!', propertyPath=director, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Director must not be blank!'}
+	ConstraintViolationImpl{interpolatedMessage='Runtime must not be blank!', propertyPath=runtime, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Runtime must not be blank!'}
+	ConstraintViolationImpl{interpolatedMessage='Year must not be blank!', propertyPath=year, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Year must not be blank!'}
+	ConstraintViolationImpl{interpolatedMessage='Language must not be blank!', propertyPath=language, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Language must not be blank!'}
+	ConstraintViolationImpl{interpolatedMessage='Awards must not be blank!', propertyPath=awards, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Awards must not be blank!'}
+	ConstraintViolationImpl{interpolatedMessage='Type must not be blank!', propertyPath=type, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Type must not be blank!'}
+	ConstraintViolationImpl{interpolatedMessage='Poster URL must not be blank!', propertyPath=poster, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Poster URL must not be blank!'}
+	ConstraintViolationImpl{interpolatedMessage='Writer must not be blank!', propertyPath=writer, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Writer must not be blank!'}
+	ConstraintViolationImpl{interpolatedMessage='Rated must not be blank!', propertyPath=rated, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Rated must not be blank!'}
+	ConstraintViolationImpl{interpolatedMessage='Country must not be blank!', propertyPath=country, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Country must not be blank!'}
+	ConstraintViolationImpl{interpolatedMessage='Response must not be blank!', propertyPath=response, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Response must not be blank!'}
+]
+	at app//org.hibernate.boot.beanvalidation.BeanValidationEventListener.validate(BeanValidationEventListener.java:176)
+	at app//org.hibernate.boot.beanvalidation.BeanValidationEventListener.onPreInsert(BeanValidationEventListener.java:88)
+	at app//org.hibernate.action.internal.EntityIdentityInsertAction.preInsert(EntityIdentityInsertAction.java:201)
+	at app//org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:79)
+	at app//org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:682)
+	at app//org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:293)
+	at app//org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:274)
+	at app//org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:324)
+	at app//org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:393)
+	at app//org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:307)
+	at app//org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:223)
+	at app//org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:136)
+	at app//org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:177)
+	at app//org.hibernate.event.internal.DefaultPersistEventListener.persist(DefaultPersistEventListener.java:95)
+	at app//org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:79)
+	at app//org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:55)
+	at app//org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127)
+	at app//org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:761)
+	at app//org.hibernate.internal.SessionImpl.persist(SessionImpl.java:745)
+	at jdk.internal.reflect.GeneratedMethodAccessor83.invoke(Unknown Source)
+	at java.base@17.0.15/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.15/java.lang.reflect.Method.invoke(Method.java:569)
+	at app//org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:320)
+	at app/jdk.proxy3/jdk.proxy3.$Proxy159.persist(Unknown Source)
+	at app//org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:636)
+	at jdk.internal.reflect.GeneratedMethodAccessor84.invoke(Unknown Source)
+	at java.base@17.0.15/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.15/java.lang.reflect.Method.invoke(Method.java:569)
+	at app//org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at app//org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:277)
+	at app//org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170)
+	at app//org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
+	at app//org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:515)
+	at app//org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:284)
+	at app//org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:731)
+	at app//org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at app//org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:174)
+	at app//org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:149)
+	at app//org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at app//org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:69)
+	at app//org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at app//org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at app//org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at app//org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at app//org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
+	at app//org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at app//org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:165)
+	at app//org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at app//org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at app/jdk.proxy3/jdk.proxy3.$Proxy174.save(Unknown Source)
+	at app//com.project.MovieReviewer.controller.WatchlistControllerIT.setup(WatchlistControllerIT.java:58)
+	at java.base@17.0.15/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.15/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base@17.0.15/java.util.ArrayList.forEach(ArrayList.java:1511)
+</failure>
+  </testcase>
+  <testcase name="emptyWatchlistInitially()" classname="com.project.MovieReviewer.controller.WatchlistControllerIT" time="0.11">
+    <failure message="jakarta.validation.ConstraintViolationException: Validation failed for classes [com.project.MovieReviewer.model.Movie] during persist time for groups [jakarta.validation.groups.Default, ]&#10;List of constraint violations:[&#10;&#9;ConstraintViolationImpl{interpolatedMessage='Country must not be blank!', propertyPath=country, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Country must not be blank!'}&#10;&#9;ConstraintViolationImpl{interpolatedMessage='Awards must not be blank!', propertyPath=awards, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Awards must not be blank!'}&#10;&#9;ConstraintViolationImpl{interpolatedMessage='Year must not be blank!', propertyPath=year, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Year must not be blank!'}&#10;&#9;ConstraintViolationImpl{interpolatedMessage='Type must not be blank!', propertyPath=type, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Type must not be blank!'}&#10;&#9;ConstraintViolationImpl{interpolatedMessage='Response must not be blank!', propertyPath=response, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Response must not be blank!'}&#10;&#9;ConstraintViolationImpl{interpolatedMessage='Poster URL must not be blank!', propertyPath=poster, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Poster URL must not be blank!'}&#10;&#9;ConstraintViolationImpl{interpolatedMessage='Writer must not be blank!', propertyPath=writer, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Writer must not be blank!'}&#10;&#9;ConstraintViolationImpl{interpolatedMessage='Plot must not be blank!', propertyPath=plot, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Plot must not be blank!'}&#10;&#9;ConstraintViolationImpl{interpolatedMessage='Rated must not be blank!', propertyPath=rated, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Rated must not be blank!'}&#10;&#9;ConstraintViolationImpl{interpolatedMessage='Runtime must not be blank!', propertyPath=runtime, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Runtime must not be blank!'}&#10;&#9;ConstraintViolationImpl{interpolatedMessage='Released date must not be blank!', propertyPath=released, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Released date must not be blank!'}&#10;&#9;ConstraintViolationImpl{interpolatedMessage='Director must not be blank!', propertyPath=director, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Director must not be blank!'}&#10;&#9;ConstraintViolationImpl{interpolatedMessage='Language must not be blank!', propertyPath=language, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Language must not be blank!'}&#10;]" type="jakarta.validation.ConstraintViolationException">jakarta.validation.ConstraintViolationException: Validation failed for classes [com.project.MovieReviewer.model.Movie] during persist time for groups [jakarta.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='Country must not be blank!', propertyPath=country, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Country must not be blank!'}
+	ConstraintViolationImpl{interpolatedMessage='Awards must not be blank!', propertyPath=awards, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Awards must not be blank!'}
+	ConstraintViolationImpl{interpolatedMessage='Year must not be blank!', propertyPath=year, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Year must not be blank!'}
+	ConstraintViolationImpl{interpolatedMessage='Type must not be blank!', propertyPath=type, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Type must not be blank!'}
+	ConstraintViolationImpl{interpolatedMessage='Response must not be blank!', propertyPath=response, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Response must not be blank!'}
+	ConstraintViolationImpl{interpolatedMessage='Poster URL must not be blank!', propertyPath=poster, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Poster URL must not be blank!'}
+	ConstraintViolationImpl{interpolatedMessage='Writer must not be blank!', propertyPath=writer, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Writer must not be blank!'}
+	ConstraintViolationImpl{interpolatedMessage='Plot must not be blank!', propertyPath=plot, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Plot must not be blank!'}
+	ConstraintViolationImpl{interpolatedMessage='Rated must not be blank!', propertyPath=rated, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Rated must not be blank!'}
+	ConstraintViolationImpl{interpolatedMessage='Runtime must not be blank!', propertyPath=runtime, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Runtime must not be blank!'}
+	ConstraintViolationImpl{interpolatedMessage='Released date must not be blank!', propertyPath=released, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Released date must not be blank!'}
+	ConstraintViolationImpl{interpolatedMessage='Director must not be blank!', propertyPath=director, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Director must not be blank!'}
+	ConstraintViolationImpl{interpolatedMessage='Language must not be blank!', propertyPath=language, rootBeanClass=class com.project.MovieReviewer.model.Movie, messageTemplate='Language must not be blank!'}
+]
+	at app//org.hibernate.boot.beanvalidation.BeanValidationEventListener.validate(BeanValidationEventListener.java:176)
+	at app//org.hibernate.boot.beanvalidation.BeanValidationEventListener.onPreInsert(BeanValidationEventListener.java:88)
+	at app//org.hibernate.action.internal.EntityIdentityInsertAction.preInsert(EntityIdentityInsertAction.java:201)
+	at app//org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:79)
+	at app//org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:682)
+	at app//org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:293)
+	at app//org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:274)
+	at app//org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:324)
+	at app//org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:393)
+	at app//org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:307)
+	at app//org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:223)
+	at app//org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:136)
+	at app//org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:177)
+	at app//org.hibernate.event.internal.DefaultPersistEventListener.persist(DefaultPersistEventListener.java:95)
+	at app//org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:79)
+	at app//org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:55)
+	at app//org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127)
+	at app//org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:761)
+	at app//org.hibernate.internal.SessionImpl.persist(SessionImpl.java:745)
+	at jdk.internal.reflect.GeneratedMethodAccessor83.invoke(Unknown Source)
+	at java.base@17.0.15/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.15/java.lang.reflect.Method.invoke(Method.java:569)
+	at app//org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:320)
+	at app/jdk.proxy3/jdk.proxy3.$Proxy159.persist(Unknown Source)
+	at app//org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:636)
+	at jdk.internal.reflect.GeneratedMethodAccessor84.invoke(Unknown Source)
+	at java.base@17.0.15/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.15/java.lang.reflect.Method.invoke(Method.java:569)
+	at app//org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at app//org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:277)
+	at app//org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170)
+	at app//org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
+	at app//org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:515)
+	at app//org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:284)
+	at app//org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:731)
+	at app//org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at app//org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:174)
+	at app//org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:149)
+	at app//org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at app//org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:69)
+	at app//org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at app//org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at app//org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at app//org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at app//org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
+	at app//org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at app//org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:165)
+	at app//org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at app//org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at app/jdk.proxy3/jdk.proxy3.$Proxy174.save(Unknown Source)
+	at app//com.project.MovieReviewer.controller.WatchlistControllerIT.setup(WatchlistControllerIT.java:58)
+	at java.base@17.0.15/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.15/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base@17.0.15/java.util.ArrayList.forEach(ArrayList.java:1511)
+</failure>
+  </testcase>
+  <system-out><![CDATA[2025-05-25T23:00:18.057+03:00  INFO 90164 --- [MovieReviewerTest] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.project.MovieReviewer.controller.WatchlistControllerIT]: WatchlistControllerIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-05-25T23:00:18.069+03:00  INFO 90164 --- [MovieReviewerTest] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.project.MovieReviewer.MovieReviewerApplication for test class com.project.MovieReviewer.controller.WatchlistControllerIT
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: select r1_0.id,r1_0.name from role r1_0 where r1_0.name=?
+Hibernate: insert into users (email,password,id) values (?,?,default)
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: insert into user_profile (bio,created_at,first_name,last_name,username,id) values (?,?,?,?,?,?)
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /auth/register
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"116"]
+             Body = {"lastName":"Lister","username":"watchuser","email":"watchlist@test.com","firstName":"Watch","password":"watchpass"}
+    Session Attrs = {}
+
+Handler:
+             Type = com.project.MovieReviewer.controller.AuthenticationController
+           Method = com.project.MovieReviewer.controller.AuthenticationController#register(RegisterDTO)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = application/json
+             Body = {"id":15,"password":"$2a$10$uxVH.pacICTs0vGxNvHP9ukxnfdV8djkO34Uz1LUvxP5lQ1RTPykG","email":"watchlist@test.com","userProfile":{"id":15,"username":"watchuser","firstName":"Watch","lastName":"Lister","bio":null,"createdAt":null},"reviews":[],"watchlistEntries":[],"username":"watchlist@test.com","authorities":[{"authority":"ROLE_USER"}],"enabled":true,"accountNonExpired":true,"accountNonLocked":true,"credentialsNonExpired":true}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /auth/login
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"53"]
+             Body = {"email":"watchlist@test.com","password":"watchpass"}
+    Session Attrs = {}
+
+Handler:
+             Type = com.project.MovieReviewer.controller.AuthenticationController
+           Method = com.project.MovieReviewer.controller.AuthenticationController#authenticate(LoginDTO)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = application/json
+             Body = {"token":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ3YXRjaGxpc3RAdGVzdC5jb20iLCJyb2xlcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNzQ4MjAzMjE4LCJleHAiOjE3NDgyMDY4MTh9.61WIhGAkOvqWXfRlvpQGmdNJdvCBVRNiSLot9eg12XU","expiresIn":3600000}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: select r1_0.id,r1_0.name from role r1_0 where r1_0.name=?
+Hibernate: insert into users (email,password,id) values (?,?,default)
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: insert into user_profile (bio,created_at,first_name,last_name,username,id) values (?,?,?,?,?,?)
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /auth/register
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"116"]
+             Body = {"lastName":"Lister","username":"watchuser","email":"watchlist@test.com","firstName":"Watch","password":"watchpass"}
+    Session Attrs = {}
+
+Handler:
+             Type = com.project.MovieReviewer.controller.AuthenticationController
+           Method = com.project.MovieReviewer.controller.AuthenticationController#register(RegisterDTO)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = application/json
+             Body = {"id":16,"password":"$2a$10$/iQccWLYrB0GoIvfmUM3QucrNeBoZI9BYZcmFOBWegNBW9cLlNWIm","email":"watchlist@test.com","userProfile":{"id":16,"username":"watchuser","firstName":"Watch","lastName":"Lister","bio":null,"createdAt":null},"reviews":[],"watchlistEntries":[],"username":"watchlist@test.com","authorities":[{"authority":"ROLE_USER"}],"enabled":true,"accountNonExpired":true,"accountNonLocked":true,"credentialsNonExpired":true}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /auth/login
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"53"]
+             Body = {"email":"watchlist@test.com","password":"watchpass"}
+    Session Attrs = {}
+
+Handler:
+             Type = com.project.MovieReviewer.controller.AuthenticationController
+           Method = com.project.MovieReviewer.controller.AuthenticationController#authenticate(LoginDTO)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = application/json
+             Body = {"token":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ3YXRjaGxpc3RAdGVzdC5jb20iLCJyb2xlcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNzQ4MjAzMjE4LCJleHAiOjE3NDgyMDY4MTh9.61WIhGAkOvqWXfRlvpQGmdNJdvCBVRNiSLot9eg12XU","expiresIn":3600000}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: select r1_0.id,r1_0.name from role r1_0 where r1_0.name=?
+Hibernate: insert into users (email,password,id) values (?,?,default)
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: insert into user_profile (bio,created_at,first_name,last_name,username,id) values (?,?,?,?,?,?)
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /auth/register
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"116"]
+             Body = {"lastName":"Lister","username":"watchuser","email":"watchlist@test.com","firstName":"Watch","password":"watchpass"}
+    Session Attrs = {}
+
+Handler:
+             Type = com.project.MovieReviewer.controller.AuthenticationController
+           Method = com.project.MovieReviewer.controller.AuthenticationController#register(RegisterDTO)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = application/json
+             Body = {"id":17,"password":"$2a$10$lfX8KmU0ueGpau1xmum0.OpC1vX76oRjBITfkCfOeNPxPQi2s5Y2q","email":"watchlist@test.com","userProfile":{"id":17,"username":"watchuser","firstName":"Watch","lastName":"Lister","bio":null,"createdAt":null},"reviews":[],"watchlistEntries":[],"username":"watchlist@test.com","authorities":[{"authority":"ROLE_USER"}],"enabled":true,"accountNonExpired":true,"accountNonLocked":true,"credentialsNonExpired":true}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /auth/login
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"53"]
+             Body = {"email":"watchlist@test.com","password":"watchpass"}
+    Session Attrs = {}
+
+Handler:
+             Type = com.project.MovieReviewer.controller.AuthenticationController
+           Method = com.project.MovieReviewer.controller.AuthenticationController#authenticate(LoginDTO)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = application/json
+             Body = {"token":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ3YXRjaGxpc3RAdGVzdC5jb20iLCJyb2xlcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNzQ4MjAzMjE4LCJleHAiOjE3NDgyMDY4MTh9.61WIhGAkOvqWXfRlvpQGmdNJdvCBVRNiSLot9eg12XU","expiresIn":3600000}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
