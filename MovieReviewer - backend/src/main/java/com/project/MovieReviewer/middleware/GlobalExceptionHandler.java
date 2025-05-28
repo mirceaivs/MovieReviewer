@@ -64,7 +64,7 @@ public class GlobalExceptionHandler {
     public ResponseEntity<Object> handleIllegalState(IllegalStateException ex) {
         log.warn("Illegal state: {}", ex.getMessage(), ex);
         return ResponseEntity
-                .status(HttpStatus.BAD_REQUEST) // 400, perfect pentru validări de genul ăsta
+                .status(HttpStatus.BAD_REQUEST) 
                 .body(Map.of("error", ex.getMessage()));
     }
 
