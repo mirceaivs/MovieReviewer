@@ -33,7 +33,6 @@ class UserControllerIT {
 
     @BeforeEach
     void setupUser() throws Exception {
-        // Register and login user
         String regJson = mapper.writeValueAsString(Map.of(
                 "email", "profile@test.com", "password", "profilepass",
                 "firstName", "Profile", "lastName", "User", "username", "profuser"
@@ -52,14 +51,12 @@ class UserControllerIT {
 
     @Test
     void getUpdateAndDeleteUserProfile_Flow() throws Exception {
-        // GET current profile
         mockMvc.perform(get("/users/me")
                         .header("Authorization", "Bearer " + jwtToken))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.email").value("profile@test.com"))
                 .andExpect(jsonPath("$.firstName").value("Profile"));
 
-        // Update profile (change firstName and lastName)
         String updateJson = mapper.writeValueAsString(Map.of(
                 "firstName", "UpdatedName", "lastName", "UpdatedLast"
         ));
@@ -69,19 +66,16 @@ class UserControllerIT {
                         .content(updateJson))
                 .andExpect(status().isOk());
 
-        // Verify changes
         mockMvc.perform(get("/users/me")
                         .header("Authorization", "Bearer " + jwtToken))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.firstName").value("UpdatedName"))
                 .andExpect(jsonPath("$.lastName").value("UpdatedLast"));
 
-        // Delete the user
         mockMvc.perform(delete("/users/me")
                         .header("Authorization", "Bearer " + jwtToken))
                 .andExpect(status().isNoContent());
 
-        // Now any further GET should fail (user no longer exists)
         mockMvc.perform(get("/users/me")
                         .header("Authorization", "Bearer " + jwtToken))
                 .andExpect(status().is4xxClientError());

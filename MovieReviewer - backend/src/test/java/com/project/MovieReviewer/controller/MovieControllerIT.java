@@ -31,14 +31,13 @@ class MovieControllerIT {
     @Autowired
     private MockMvc mockMvc;
     @Autowired
-    private MovieRepository movieRepository; // Used to seed test data
+    private MovieRepository movieRepository;
 
     private String jwtToken;
     private ObjectMapper mapper = new ObjectMapper();
 
     @BeforeEach
     void initUser() throws Exception {
-        // Register and log in a test user to get a JWT for authenticated requests
         String registerJson = mapper.writeValueAsString(Map.of(
                 "email", "movieuser@test.com",
                 "password", "moviepass",
@@ -83,7 +82,6 @@ class MovieControllerIT {
 
     @Test
     void createAndFetchMovie_AsUnauthorizedUser_ShouldBeForbidden() throws Exception {
-        // Attempt to create movie without ADMIN role should return 403 Forbidden
         String movieJson = mapper.writeValueAsString(Map.of(
                 "title", "New Movie", "year", "2023", "plot", "Description"
         ));
@@ -96,9 +94,21 @@ class MovieControllerIT {
 
     @Test
     void searchMovies_ShouldFilterByTitle() throws Exception {
-        // Seed a movie via repository for testing
         Movie movie = new Movie();
         movie.setTitle("UniqueTitle");
+        movie.setYear("2023");
+        movie.setCountry("Romania");
+        movie.setAwards("None");
+        movie.setResponse("True");
+        movie.setLanguage("Romana");
+        movie.setDirector("Boss Director");
+        movie.setRated("PG");
+        movie.setRuntime("120 min");
+        movie.setReleased("2023-05-28");
+        movie.setType("movie");
+        movie.setWriter("Writer Boss");
+        movie.setPlot("Un film genial");
+        movie.setPoster("http://poster.com/film.jpg");
         movieRepository.save(movie);
 
         mockMvc.perform(get("/movies/search?title=UniqueTitle")
@@ -107,9 +117,9 @@ class MovieControllerIT {
                 .andExpect(jsonPath("$.content[0].title").value("UniqueTitle"));
     }
 
+
     @Test
     void omdbSearch_MissingQueryParam_ShouldReturnBadRequest() throws Exception {
-        // Omdb search requires 'query' param; missing it yields 400 Bad Request
         mockMvc.perform(get("/movies/omdb-search")
                         .header("Authorization", "Bearer " + jwtToken))
                 .andExpect(status().isBadRequest());

@@ -33,7 +33,7 @@ class AuthControllerIT {
 
         RegisterDTO reg = new RegisterDTO(
                 "test@email.com",
-                "SuperSecret1234",   // >12 chars!
+                "SuperSecret1234",
                 "Karlitos",
                 "Student",
                 "karlitosgenz"
@@ -68,7 +68,7 @@ class AuthControllerIT {
                 "alreadyused@email.com",
                 "ParolaMea12345",
                 "Karla",
-                "Studentă",
+                "Studenta",
                 "karlauser"
         );
         mockMvc.perform(post("/auth/register")

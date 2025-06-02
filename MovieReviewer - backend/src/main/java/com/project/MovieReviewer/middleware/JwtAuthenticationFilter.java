@@ -41,7 +41,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) throws ServletException {
         String path = request.getServletPath();
-        // Adaugă aici toate endpoint-urile tale de auth (fără JWT)
+
         return path.equals("/auth/health") || path.equals("/api/auth/health") ||
                 path.equals("/auth/register") || path.equals("/api/auth/register") ||
                 path.equals("/auth/login") || path.equals("/api/auth/login");

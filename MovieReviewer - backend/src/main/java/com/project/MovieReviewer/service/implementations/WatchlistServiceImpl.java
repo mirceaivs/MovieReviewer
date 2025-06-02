@@ -58,7 +58,7 @@ public class WatchlistServiceImpl implements WatchlistService {
 
         boolean alreadyExists = watchlistRepository.findByUserAndMovie(user, movie).isPresent();
         if (alreadyExists) {
-            throw new IllegalStateException("Filmul este deja în Watchlist!");
+            throw new IllegalStateException("Movie is already in the watchlist!");
         }
 
         Watchlist watchlist = WatchlistMapper.toEntity(new WatchlistDTO(null, movieId, null), user, movie);

@@ -18,6 +18,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.beans.Transient;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.Set;
 
 @Service
@@ -62,7 +64,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
                 .email(newUser.getEmail())
                 .password(passwordEncoder.encode(newUser.getPassword()))
                 .userProfile(userProfile)
-                .roles(Set.of(userRole))
+                .roles(new HashSet<>(Set.of(userRole)))
                 .build();
 
         userProfile.setUser(user);

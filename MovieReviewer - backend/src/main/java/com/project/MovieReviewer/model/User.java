@@ -66,4 +66,15 @@ public class User implements UserDetails {
     public String getUsername() {
         return email;
     }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = (roles == null) ? new HashSet<>() : new HashSet<>(roles);
+    }
+    public void setReviews(List<Review> reviews) {
+        this.reviews = (reviews == null) ? new ArrayList<>() : new ArrayList<>(reviews);
+    }
+    public void setWatchlistEntries(List<Watchlist> watchlistEntries) {
+        this.watchlistEntries = (watchlistEntries == null) ? new ArrayList<>() : new ArrayList<>(watchlistEntries);
+    }
+
 }

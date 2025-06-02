@@ -34,9 +34,28 @@ class WatchlistControllerIT {
     private ObjectMapper mapper = new ObjectMapper();
     private Long movieId;
 
+    private Movie makeValidMovie() {
+        Movie movie = new Movie();
+        movie.setTitle("UniqueTitle");
+        movie.setYear("2023");
+        movie.setCountry("Romania");
+        movie.setAwards("None");
+        movie.setResponse("True");
+        movie.setLanguage("Romana");
+        movie.setDirector("Boss Director");
+        movie.setRated("PG");
+        movie.setRuntime("120 min");
+        movie.setReleased("2023-05-28");
+        movie.setType("movie");
+        movie.setWriter("Writer Boss");
+        movie.setPlot("Un film genial");
+        movie.setPoster("http://poster.com/film.jpg");
+        return movie;
+    }
+
+
     @BeforeEach
     void setup() throws Exception {
-        // Register and login user
         String regJson = mapper.writeValueAsString(Map.of(
                 "email", "watchlist@test.com", "password", "watchpass",
                 "firstName", "Watch", "lastName", "Lister", "username", "watchuser"
@@ -52,10 +71,9 @@ class WatchlistControllerIT {
                 .content(loginJson)).andReturn();
         jwtToken = mapper.readTree(res.getResponse().getContentAsString()).get("token").asText();
 
-        // Create a movie to add to watchlist
-        Movie m = new Movie();
-        m.setTitle("WatchMovie");
+        Movie m = makeValidMovie();
         movieId = movieRepository.save(m).getId();
+
     }
 
     @Test
@@ -69,24 +87,20 @@ class WatchlistControllerIT {
 
     @Test
     void addAndRemoveFromWatchlist_Flow() throws Exception {
-        // Add to watchlist
         mockMvc.perform(post("/watchlist/" + movieId)
                         .header("Authorization", "Bearer " + jwtToken))
                 .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.movieId").value(movieId));
 
-        // Now GET should contain one item
         mockMvc.perform(get("/watchlist")
                         .header("Authorization", "Bearer " + jwtToken))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].movieId").value(movieId));
 
-        // Removing the movie
         mockMvc.perform(delete("/watchlist/" + movieId)
                         .header("Authorization", "Bearer " + jwtToken))
                 .andExpect(status().isNoContent());
 
-        // Watchlist should be empty again
         mockMvc.perform(get("/watchlist")
                         .header("Authorization", "Bearer " + jwtToken))
                 .andExpect(status().isOk())
@@ -95,14 +109,12 @@ class WatchlistControllerIT {
 
     @Test
     void addDuplicateToWatchlist_ShouldFail() throws Exception {
-        // First add
         mockMvc.perform(post("/watchlist/" + movieId)
                         .header("Authorization", "Bearer " + jwtToken))
                 .andExpect(status().isCreated());
 
-        // Add same movie again -> IllegalStateException
         mockMvc.perform(post("/watchlist/" + movieId)
                         .header("Authorization", "Bearer " + jwtToken))
-                .andExpect(status().is5xxServerError());
+                .andExpect(status().isBadRequest());;
     }
 }

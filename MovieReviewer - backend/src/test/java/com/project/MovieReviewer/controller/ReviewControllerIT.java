@@ -36,7 +36,6 @@ class ReviewControllerIT {
 
     @BeforeEach
     void initData() throws Exception {
-        // Register/login user
         String regJson = mapper.writeValueAsString(Map.of(
                 "email", "reviewuser@test.com", "password", "reviewpass",
                 "firstName", "Review", "lastName", "User", "username", "revuser"
@@ -52,10 +51,23 @@ class ReviewControllerIT {
                 .content(loginJson)).andReturn();
         jwtToken = mapper.readTree(res.getResponse().getContentAsString()).get("token").asText();
 
-        // Seed a movie for reviews
         Movie m = new Movie();
         m.setTitle("MovieForReview");
+        m.setAwards("None");
+        m.setType("movie");
+        m.setPoster("http://dummy.com/poster.jpg");
+        m.setLanguage("English");
+        m.setCountry("USA");
+        m.setRuntime("120 min");
+        m.setYear("2024");
+        m.setWriter("Some Writer");
+        m.setReleased("2024-05-28");
+        m.setPlot("Just a test plot.");
+        m.setDirector("Best Director");
+        m.setResponse("True");
+        m.setRated("PG-13");
         movieId = movieRepository.save(m).getId();
+
     }
 
     @Test
@@ -69,7 +81,6 @@ class ReviewControllerIT {
 
     @Test
     void postReview_AndUpdateAndDelete_ShouldWork() throws Exception {
-        // Create a new review for the movie
         String reviewJson = mapper.writeValueAsString(Map.of(
                 "content", "Great movie!", "rating", 5
         ));
@@ -82,7 +93,6 @@ class ReviewControllerIT {
                 .andReturn();
         Long reviewId = mapper.readTree(res.getResponse().getContentAsString()).get("id").asLong();
 
-        // Update the review
         String updatedJson = mapper.writeValueAsString(Map.of(
                 "content", "Actually, it was just good", "rating", 4
         ));
@@ -94,18 +104,15 @@ class ReviewControllerIT {
                 .andExpect(jsonPath("$.content").value("Actually, it was just good"))
                 .andExpect(jsonPath("$.rating").value(4));
 
-        // Verify that GET reviews for user shows this review
         mockMvc.perform(get("/users/me/reviews")
                         .header("Authorization", "Bearer " + jwtToken))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].content").value("Actually, it was just good"));
 
-        // Delete the review
         mockMvc.perform(delete("/movies/" + movieId + "/reviews/" + reviewId)
                         .header("Authorization", "Bearer " + jwtToken))
                 .andExpect(status().isNoContent());
 
-        // Now GET reviews for movie should be empty again
         mockMvc.perform(get("/movies/" + movieId + "/reviews")
                         .header("Authorization", "Bearer " + jwtToken))
                 .andExpect(status().isOk())
@@ -114,7 +121,6 @@ class ReviewControllerIT {
 
     @Test
     void addDuplicateReview_ShouldReturnError() throws Exception {
-        // Create first review
         String reviewJson = mapper.writeValueAsString(Map.of(
                 "content", "Nice!", "rating", 4
         ));
@@ -124,11 +130,11 @@ class ReviewControllerIT {
                         .content(reviewJson))
                 .andExpect(status().isCreated());
 
-        // Attempt to create a second review for same movie by same user -> IllegalStateException
         mockMvc.perform(post("/movies/" + movieId + "/reviews")
                         .header("Authorization", "Bearer " + jwtToken)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(reviewJson))
-                .andExpect(status().is5xxServerError());
+                .andExpect(status().isBadRequest());
+
     }
 }
