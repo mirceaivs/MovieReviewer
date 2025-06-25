@@ -10,7 +10,7 @@
    Utilizatorii se pot înregistra și autentifica, primind token JWT stocat în cookie-uri pentru sesiuni sigure.
 
 2. **Movie Management**  
-   Utilizatorii pot adăuga, edita, șterge și vizualiza filme, fiecare cu gen, actori, postere și detalii suplimentare preluate prin OMDB API.
+   Utilizatorii pot adăuga, edita, șterge și vizualiza filmele dorite prin adaugarea acestora intr-un watchlist, fiecare cu gen, actori, postere și detalii suplimentare preluate prin OMDB API.
 
 3. **Review System**  
    Utilizatorii pot lăsa recenzii și rating-uri la fiecare film, vizibile public.
