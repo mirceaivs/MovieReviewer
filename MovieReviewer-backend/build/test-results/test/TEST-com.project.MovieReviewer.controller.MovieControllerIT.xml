@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.project.MovieReviewer.controller.MovieControllerIT" tests="5" skipped="0" failures="0" errors="0" timestamp="2025-06-22T14:40:22.557Z" hostname="Mircea" time="1.323">
+  <properties/>
+  <testcase name="omdbSearch_MissingQueryParam_ShouldReturnBadRequest()" classname="com.project.MovieReviewer.controller.MovieControllerIT" time="0.323"/>
+  <testcase name="getMovieById_NotFound_ShouldReturnError()" classname="com.project.MovieReviewer.controller.MovieControllerIT" time="0.147"/>
+  <testcase name="createAndFetchMovie_AsUnauthorizedUser_ShouldBeForbidden()" classname="com.project.MovieReviewer.controller.MovieControllerIT" time="0.375"/>
+  <testcase name="getAllMovies_WithNoData_ShouldReturnEmptyPage()" classname="com.project.MovieReviewer.controller.MovieControllerIT" time="0.242"/>
+  <testcase name="searchMovies_ShouldFilterByTitle()" classname="com.project.MovieReviewer.controller.MovieControllerIT" time="0.232"/>
+  <system-out><![CDATA[Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: select r1_0.id,r1_0.name from role r1_0 where r1_0.name=?
+Hibernate: insert into users (email,password,id) values (?,?,default)
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: select r1_0.id,r1_0.name from role r1_0 where r1_0.name=?
+Hibernate: insert into users (email,password,id) values (?,?,default)
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: select m1_0.id,m1_0.awards,m1_0.country,m1_0.director,m1_0.external_id,m1_0.imdb_rating,m1_0.imdb_votes,m1_0.language,m1_0.metascore,m1_0.plot,m1_0.poster,m1_0.rated,m1_0.released,m1_0.response,m1_0.runtime,m1_0.title,m1_0.type,m1_0.writer,m1_0.release_year from movies m1_0 where m1_0.id=?
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: select r1_0.id,r1_0.name from role r1_0 where r1_0.name=?
+Hibernate: insert into users (email,password,id) values (?,?,default)
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: select r1_0.id,r1_0.name from role r1_0 where r1_0.name=?
+Hibernate: insert into users (email,password,id) values (?,?,default)
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: select m1_0.id,m1_0.awards,m1_0.country,m1_0.director,m1_0.external_id,m1_0.imdb_rating,m1_0.imdb_votes,m1_0.language,m1_0.metascore,m1_0.plot,m1_0.poster,m1_0.rated,m1_0.released,m1_0.response,m1_0.runtime,m1_0.title,m1_0.type,m1_0.writer,m1_0.release_year from movies m1_0 offset ? rows fetch first ? rows only
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: select r1_0.id,r1_0.name from role r1_0 where r1_0.name=?
+Hibernate: insert into users (email,password,id) values (?,?,default)
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: insert into user_profile (bio,created_at,first_name,last_name,username,id) values (?,?,?,?,?,?)
+Hibernate: insert into movies (awards,country,director,external_id,imdb_rating,imdb_votes,language,metascore,plot,poster,rated,released,response,runtime,title,type,writer,release_year,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,default)
+Hibernate: select m1_0.id,m1_0.awards,m1_0.country,m1_0.director,m1_0.external_id,m1_0.imdb_rating,m1_0.imdb_votes,m1_0.language,m1_0.metascore,m1_0.plot,m1_0.poster,m1_0.rated,m1_0.released,m1_0.response,m1_0.runtime,m1_0.title,m1_0.type,m1_0.writer,m1_0.release_year from movies m1_0 where lower(m1_0.title) like ? escape '' offset ? rows fetch first ? rows only
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.project.MovieReviewer.controller.ReviewControllerIT" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-06-22T14:40:23.913Z" hostname="Mircea" time="2.312">
+  <properties/>
+  <testcase name="postReview_AndUpdateAndDelete_ShouldWork()" classname="com.project.MovieReviewer.controller.ReviewControllerIT" time="1.988"/>
+  <testcase name="addDuplicateReview_ShouldReturnError()" classname="com.project.MovieReviewer.controller.ReviewControllerIT" time="0.188"/>
+  <testcase name="getReviews_NoReviews_ShouldReturnEmptyList()" classname="com.project.MovieReviewer.controller.ReviewControllerIT" time="0.135"/>
+  <system-out><![CDATA[Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: select r1_0.id,r1_0.name from role r1_0 where r1_0.name=?
+Hibernate: insert into users (email,password,id) values (?,?,default)
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: insert into user_profile (bio,created_at,first_name,last_name,username,id) values (?,?,?,?,?,?)
+Hibernate: insert into movies (awards,country,director,external_id,imdb_rating,imdb_votes,language,metascore,plot,poster,rated,released,response,runtime,title,type,writer,release_year,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,default)
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: insert into user_role (user_id,role_id) values (?,?)
+Hibernate: select r1_0.id,r1_0.content,r1_0.movie_id,r1_0.rating,r1_0.user_id from reviews r1_0 where r1_0.user_id=? and r1_0.movie_id=?
+Hibernate: insert into reviews (content,movie_id,rating,user_id,id) values (?,?,?,?,default)
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: update reviews set content=?,movie_id=?,rating=?,user_id=? where id=?
+Hibernate: select r1_0.id,r1_0.content,r1_0.movie_id,r1_0.rating,r1_0.user_id from reviews r1_0 where r1_0.user_id=?
+Hibernate: select count(*) from reviews r1_0 where r1_0.id=?
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: select r1_0.id,r1_0.name from role r1_0 where r1_0.name=?
+Hibernate: insert into users (email,password,id) values (?,?,default)
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: insert into user_profile (bio,created_at,first_name,last_name,username,id) values (?,?,?,?,?,?)
+Hibernate: insert into movies (awards,country,director,external_id,imdb_rating,imdb_votes,language,metascore,plot,poster,rated,released,response,runtime,title,type,writer,release_year,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,default)
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: insert into user_role (user_id,role_id) values (?,?)
+Hibernate: select r1_0.id,r1_0.content,r1_0.movie_id,r1_0.rating,r1_0.user_id from reviews r1_0 where r1_0.user_id=? and r1_0.movie_id=?
+Hibernate: insert into reviews (content,movie_id,rating,user_id,id) values (?,?,?,?,default)
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: select r1_0.id,r1_0.content,r1_0.movie_id,r1_0.rating,r1_0.user_id from reviews r1_0 where r1_0.user_id=? and r1_0.movie_id=?
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: select r1_0.id,r1_0.name from role r1_0 where r1_0.name=?
+Hibernate: insert into users (email,password,id) values (?,?,default)
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: insert into user_profile (bio,created_at,first_name,last_name,username,id) values (?,?,?,?,?,?)
+Hibernate: insert into movies (awards,country,director,external_id,imdb_rating,imdb_votes,language,metascore,plot,poster,rated,released,response,runtime,title,type,writer,release_year,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,default)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

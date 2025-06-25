@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - MovieControllerIT</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>MovieControllerIT</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.project.MovieReviewer.controller.html">com.project.MovieReviewer.controller</a> &gt; MovieControllerIT</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">5</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">1.319s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="tab-container">
+<ul class="tabLinks">
+<li>
+<a href="#">Tests</a>
+</li>
+<li>
+<a href="#">Standard output</a>
+</li>
+</ul>
+<div class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">createAndFetchMovie_AsUnauthorizedUser_ShouldBeForbidden()</td>
+<td class="success">0.375s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getAllMovies_WithNoData_ShouldReturnEmptyPage()</td>
+<td class="success">0.242s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getMovieById_NotFound_ShouldReturnError()</td>
+<td class="success">0.147s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">omdbSearch_MissingQueryParam_ShouldReturnBadRequest()</td>
+<td class="success">0.323s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">searchMovies_ShouldFilterByTitle()</td>
+<td class="success">0.232s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: select r1_0.id,r1_0.name from role r1_0 where r1_0.name=?
+Hibernate: insert into users (email,password,id) values (?,?,default)
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: select r1_0.id,r1_0.name from role r1_0 where r1_0.name=?
+Hibernate: insert into users (email,password,id) values (?,?,default)
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: select m1_0.id,m1_0.awards,m1_0.country,m1_0.director,m1_0.external_id,m1_0.imdb_rating,m1_0.imdb_votes,m1_0.language,m1_0.metascore,m1_0.plot,m1_0.poster,m1_0.rated,m1_0.released,m1_0.response,m1_0.runtime,m1_0.title,m1_0.type,m1_0.writer,m1_0.release_year from movies m1_0 where m1_0.id=?
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: select r1_0.id,r1_0.name from role r1_0 where r1_0.name=?
+Hibernate: insert into users (email,password,id) values (?,?,default)
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: select r1_0.id,r1_0.name from role r1_0 where r1_0.name=?
+Hibernate: insert into users (email,password,id) values (?,?,default)
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: select m1_0.id,m1_0.awards,m1_0.country,m1_0.director,m1_0.external_id,m1_0.imdb_rating,m1_0.imdb_votes,m1_0.language,m1_0.metascore,m1_0.plot,m1_0.poster,m1_0.rated,m1_0.released,m1_0.response,m1_0.runtime,m1_0.title,m1_0.type,m1_0.writer,m1_0.release_year from movies m1_0 offset ? rows fetch first ? rows only
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: select r1_0.id,r1_0.name from role r1_0 where r1_0.name=?
+Hibernate: insert into users (email,password,id) values (?,?,default)
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: select u1_0.id,u1_0.email,u1_0.password from users u1_0 where u1_0.email=?
+Hibernate: insert into user_profile (bio,created_at,first_name,last_name,username,id) values (?,?,?,?,?,?)
+Hibernate: insert into movies (awards,country,director,external_id,imdb_rating,imdb_votes,language,metascore,plot,poster,rated,released,response,runtime,title,type,writer,release_year,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,default)
+Hibernate: select m1_0.id,m1_0.awards,m1_0.country,m1_0.director,m1_0.external_id,m1_0.imdb_rating,m1_0.imdb_votes,m1_0.language,m1_0.metascore,m1_0.plot,m1_0.poster,m1_0.rated,m1_0.released,m1_0.response,m1_0.runtime,m1_0.title,m1_0.type,m1_0.writer,m1_0.release_year from movies m1_0 where lower(m1_0.title) like ? escape '' offset ? rows fetch first ? rows only
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="https://www.gradle.org">Gradle 8.13</a> at Jun 22, 2025, 5:40:27 PM</p>
+</div>
+</div>
+</body>
+</html>
